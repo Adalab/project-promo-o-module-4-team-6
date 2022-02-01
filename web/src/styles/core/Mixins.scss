@@ -1,0 +1,47 @@
+//Mixins for responsive
+@mixin tablet {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+//Other style mixins
+
+@mixin formtext() {
+	font-size: 14px;
+	font-family: "Open Sans", sans-serif;
+	line-height: 20px;
+	color: $darkgreen;
+}
+
+@mixin landingMainText() {
+	font-size: 14px;
+	font-family: "Open Sans", sans-serif;
+	text-align: center;
+	color: $icon;
+}
+
+@mixin columnCentered() {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+@mixin placeHolder() {
+	font-size: 14px;
+	font-family: "Open Sans", sans-serif;
+	color: #c5c5c5;
+}
+
+@mixin colorBox() {
+	height: 25px;
+	width: 30px;
+}
+
+@mixin colorList() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "./static/css/main.df219195.css",
+    "main.js": "./static/js/main.41dbfbe1.js",
+    "static/media/img_card.jpg": "./static/media/img_card.781e93c62408a7de4a20.jpg",
+    "static/media/tarjetas-molonas.png": "./static/media/tarjetas-molonas.488717f38ae8c822e5fd.png",
+    "index.html": "./index.html",
+    "main.df219195.css.map": "./static/css/main.df219195.css.map",
+    "main.41dbfbe1.js.map": "./static/js/main.41dbfbe1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df219195.css",
+    "static/js/main.41dbfbe1.js"
+  ]
+}
