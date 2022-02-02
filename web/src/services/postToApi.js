@@ -1,6 +1,7 @@
+const EXPRESS_SERVER = `http//localhost:4000/card`;
+
 const postToApi = (userData, setUrl) => {
-  console.log("holis");
-  fetch("https://awesome-profile-cards.herokuapp.com/card", {
+  fetch(EXPRESS_SERVER, {
     method: "POST",
     body: JSON.stringify(userData),
     headers: { "Content-Type": "application/json" },
