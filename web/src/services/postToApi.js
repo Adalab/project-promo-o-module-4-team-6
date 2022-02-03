@@ -1,4 +1,4 @@
-const EXPRESS_SERVER = `http//localhost:4000/card`;
+const EXPRESS_SERVER = `http://localhost:4000/card`;
 
 const postToApi = (userData, setUrl) => {
   fetch(EXPRESS_SERVER, {
