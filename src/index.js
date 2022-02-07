@@ -1,6 +1,9 @@
 // Importamos los dos módulos de NPM necesarios para trabajar
 const express = require("express");
 const cors = require("cors");
+const { v4: uuidv4 } = require('uuid');
+const { request } = require("express");
+const cards = require("./data/cards.json");
 
 // Creamos el servidor
 const server = express();
@@ -10,8 +13,11 @@ server.use(cors());
 server.use(express.json(
   {
     limit: "1mb"
-}
+  }
 ));
+// Esto es para el motor de plantillas
+server.set("view engine", "ejs");
+
 
 // Arrancamos el servidor en el puerto 4000
 const serverPort = 4000;
@@ -32,6 +38,7 @@ server.post("/card", (req, res) => {
     linkedin: req.body.linkedin,
     github: req.body.github,
     photo: req.body.photo,
+    id: uuidv4(),
   };
   if (
     userCard.palette !== "" &&
@@ -58,7 +65,18 @@ server.post("/card", (req, res) => {
 });
 
 // Ruta para mostrar tarjeta
+server.get('/card/:id', (req, res) => {
+  const idCard = req.params.id;
+  console.log(idCard);
+  // const userCard=savedCards.find(card=> card.id===rep.params.id);
+  res.render('card', cards[0]);
+})
+
 
 // Servidor estatico
 const staticServerPath = "./src/public-react";
 server.use(express.static(staticServerPath));
+
+const staticServerPathStyles = "./src/styles";
+server.use(express.static(staticServerPathStyles));
+
