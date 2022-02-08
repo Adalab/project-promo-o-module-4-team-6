@@ -3,7 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const { v4: uuidv4 } = require("uuid");
 const { request } = require("express");
-const cards = require("./data/cards.json");
+//const cards = require("./data/cards.json");
+const Database = require("better-sqlite3");
+const db = new Database("./src/db/database.db", {});
 
 // Creamos el servidor
 const server = express();
@@ -45,12 +47,27 @@ server.post("/card", (req, res) => {
     userCard.job !== "" &&
     userCard.email !== "" &&
     userCard.linkedin !== "" &&
-    userCard.github !== "" &&
-    userCard.photo !== ""
+    userCard.github !== ""
   ) {
+    const query = db.prepare(
+      "INSERT INTO cards (id, palette, name, job, email, linkedin, github, photo, phone) VALUES (?, ?, ?, ? , ?, ?, ?, ?, ? )"
+    );
+    const createdCard = query.run(
+      userCard.id,
+      userCard.palette,
+      userCard.name,
+      userCard.job,
+      userCard.email,
+      userCard.linkedin,
+      userCard.github,
+      userCard.photo,
+      userCard.phone
+    );
+
     const responseSuccess = {
       success: true,
-      cardURL: "http//localhost:4000/card/${cardId}",
+      cardURL: `http://localhost:4000/card/${userCard.id}`,
+      cardId: userCard.id,
     };
     res.json(responseSuccess);
   } else {
@@ -65,10 +82,10 @@ server.post("/card", (req, res) => {
 
 // Ruta para mostrar tarjeta
 server.get("/card/:id", (req, res) => {
-  const idCard = req.params.id;
-  console.log(idCard);
-  // const userCard=savedCards.find(card=> card.id===rep.params.id);
-  res.render("card", cards[0]);
+  const cardId = req.body;
+  const query = db.prepare("SELECT * FROM cards WHERE id = ?");
+  const cardToRender = query.get(cardId);
+  res.render("card", cardToRender);
 });
 
 // Servidor estatico
