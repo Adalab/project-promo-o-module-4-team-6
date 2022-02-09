@@ -66,7 +66,8 @@ server.post("/card", (req, res) => {
 
     const responseSuccess = {
       success: true,
-      cardURL: `${process.env.PORT}/card/${userCard.id}`,
+      cardURL: `https://patata-game.herokuapp.com
+      /card/${userCard.id}`,
       cardId: userCard.id,
     };
     res.json(responseSuccess);
