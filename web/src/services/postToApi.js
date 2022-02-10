@@ -1,4 +1,4 @@
-const EXPRESS_SERVER = `http://localhost:4000/card`;
+const EXPRESS_SERVER = `/card`;
 
 const postToApi = (userData, setUrl) => {
   fetch(EXPRESS_SERVER, {
@@ -15,6 +15,5 @@ const postToApi = (userData, setUrl) => {
     })
     .catch((error) => console.error(error));
 };
-
 
 export default postToApi;
