@@ -7,15 +7,28 @@
   align-items: flex-start;
   margin: 22px 0 10px;
 
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
   &__label {
     font-family: $mainfont;
     font-size: 14px;
     text-transform: uppercase;
-    color: $darkgray;
+    color: white;
     margin-left: 20px;
     height: 19px;
   }
-
+  & .color_blue,
+  .color_grey,
+  .color_red {
+    font-family: $mainfont;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+  }
   & .color_blue {
     @include colorList;
     margin-top: 6px;
@@ -71,6 +84,7 @@
 .radio {
   height: 17px;
   width: 17px;
+  margin-left: 5px;
   cursor: pointer;
 }
 

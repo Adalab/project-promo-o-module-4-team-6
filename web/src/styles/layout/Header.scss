@@ -1,8 +1,12 @@
 .header {
-  background-color: white;
+  background: rgb(48, 48, 48);
+  background: linear-gradient(
+    0deg,
+    rgba(48, 48, 48, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
   width: 100%;
   &__logo {
-    width: 201px;
     height: 50px;
     margin-left: 40px;
     margin-top: 30px;

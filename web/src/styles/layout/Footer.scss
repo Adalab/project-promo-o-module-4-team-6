@@ -1,8 +1,8 @@
-@import '../core/Variables.scss';
-@import '../core/Mixins.scss';
+@import "../core/Variables.scss";
+@import "../core/Mixins.scss";
 .footer {
-  border-top: 1px solid #d8d8d8;
-  background-color: white;
+  border-top: 1px solid #f14f8e;
+  background-color: #f14f8e;
   height: 110px;
   width: 100%;
   @include columnCentered;
@@ -12,7 +12,7 @@
 
   &__text {
     @include formtext;
-    color: #6b6b6b;
+    color: white;
     opacity: 0.5;
     margin-top: auto;
     margin-bottom: auto;

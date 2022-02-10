@@ -2,7 +2,10 @@
 @import "../core/Mixins.scss";
 
 .preview {
-  background: linear-gradient(#bfcdd0, #dde9ed);
+  background-image: url(https://s.yimg.com/ny/api/res/1.2/sijrkOFxo3O.TT3bJuwiZA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2021-10/14466170-24da-11ec-bf9e-8d51411c72de);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   width: 100%;
   padding-top: 38px;
   padding-bottom: 40px;

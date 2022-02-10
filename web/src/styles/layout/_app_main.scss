@@ -2,7 +2,7 @@
 @import "../core/Mixins.scss";
 
 .main {
-  background: linear-gradient(#f5f5f5, #fff);
+  background-color: #303030;
   padding-bottom: 30px;
   @include tablet {
     display: flex;

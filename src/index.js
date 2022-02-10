@@ -66,7 +66,7 @@ server.post("/card", (req, res) => {
 
     const responseSuccess = {
       success: true,
-      cardURL: `https://patata-game.herokuapp.com/card/${userCard.id}`,
+      cardURL: `http://localhost:4000/card/${userCard.id}`,
       cardId: userCard.id,
     };
     res.json(responseSuccess);
@@ -85,12 +85,7 @@ server.get("/card/:id", (req, res) => {
   const cardId = req.params.id;
   const query = db.prepare("SELECT * FROM cards WHERE id = ?");
   const cardToRender = query.get(cardId);
-  res.json({
-    query,
-    cardToRender,
-  });
-
-  //res.render("card", cardToRender);
+  res.render("card", cardToRender);
 });
 
 // Servidor estatico

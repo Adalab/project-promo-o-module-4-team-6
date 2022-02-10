@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
@@ -18,42 +18,64 @@
     />
     <link rel="stylesheet" href="../main.css" />
     <title>Document</title>
-</head>
-<body>
-      <section class="preview">
-          <article class="preview__article palette-1">
-              <div class="preview__article--container">
-                  <div class="preview__article--rectangle js-rectangle"></div>
-                  <h2 class="preview__article--name js-preview__name"><%= name %></h2>
-                  <h3 class="preview__article--job js-preview__job"><%= job %></h3>
-                </div>
-                <div class="profile">
-                    <div class="profile__avatar preview__article--img js__profile-image" style="background-image: url(<%= photo %>)">
-                    </div>
-                </div>
-                <div class="container">
-                    <a class="js-preview__phone" href="tel:<%= phone %>" alt="Ir a móvil" target="blank">
-                        <div class="container-icon">
-                            <i class="fas fa-mobile-alt contact-icon"></i>
-                        </div>
-                    </a>
-                    <a class="js-preview__mail" href="mailto:<%= email %>" alt="Ir a correo electronico" target="blank">
-                        <div class="container-icon">
-                            <i class="far fa-envelope contact-icon"></i>
-                        </div>
-                    </a>
-                    <a class="js-preview__linkedin" href="https://www.linkedin.com/<%= linkedin %>" alt="Ir a la página de Linkedin" target="blank">
-                        <div class="container-icon">
-                            <i class="fab fa-linkedin-in contact-icon"></i>
-                        </div>
-                    </a>
-                    <a class="js-preview__github" href="https://www.github.com/<%= github %>" alt="Ir a la página de GitHub" target="blank">
-                        <div class="container-icon">
-                            <i class="fab fa-github-alt contact-icon"></i>
-                        </div>
-                    </a>
-                </div>
-            </article>
-        </section>
-</body>
+  </head>
+  <body>
+    <section class="preview">
+      <article class="preview__article palette-<%= palette %>">
+        <div class="preview__article--container">
+          <div class="preview__article--rectangle js-rectangle"></div>
+          <h2 class="preview__article--name js-preview__name"><%= name %></h2>
+          <h3 class="preview__article--job js-preview__job"><%= job %></h3>
+        </div>
+        <div class="profile">
+          <div
+            class="profile__avatar preview__article--img js__profile-image"
+            style="background-image: url(<%= photo %>)"
+          ></div>
+        </div>
+        <div class="container">
+          <a
+            class="js-preview__phone"
+            href="tel:<%= phone %>"
+            alt="Ir a móvil"
+            target="blank"
+          >
+            <div class="container-icon">
+              <i class="fas fa-mobile-alt contact-icon"></i>
+            </div>
+          </a>
+          <a
+            class="js-preview__mail"
+            href="mailto:<%= email %>"
+            alt="Ir a correo electronico"
+            target="blank"
+          >
+            <div class="container-icon">
+              <i class="far fa-envelope contact-icon"></i>
+            </div>
+          </a>
+          <a
+            class="js-preview__linkedin"
+            href="https://www.linkedin.com/<%= linkedin %>"
+            alt="Ir a la página de Linkedin"
+            target="blank"
+          >
+            <div class="container-icon">
+              <i class="fab fa-linkedin-in contact-icon"></i>
+            </div>
+          </a>
+          <a
+            class="js-preview__github"
+            href="https://www.github.com/<%= github %>"
+            alt="Ir a la página de GitHub"
+            target="blank"
+          >
+            <div class="container-icon">
+              <i class="fab fa-github-alt contact-icon"></i>
+            </div>
+          </a>
+        </div>
+      </article>
+    </section>
+  </body>
 </html>

@@ -1,5 +1,5 @@
-import '../styles/layout/Header.scss';
-import imgTarjetasMolonas from '../images/tarjetas-molonas.png';
+import "../styles/layout/Header.scss";
+import patataGameLogo from "../images/patataGameLogo.png";
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
       >
         <img
           className="header__logo"
-          src={imgTarjetasMolonas}
+          src={patataGameLogo}
           alt="Logo de Awesome Profile Cards"
           title="Logo de Awesome Profile Cards"
         />

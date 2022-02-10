@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.53ff200b.css",
-    "main.js": "./static/js/main.cfe61e5c.js",
+    "main.css": "./static/css/main.90ffbd42.css",
+    "main.js": "./static/js/main.37e7da8a.js",
     "static/media/img_card.jpg": "./static/media/img_card.781e93c62408a7de4a20.jpg",
     "static/media/no-me-entero-de-nada.jpg": "./static/media/no-me-entero-de-nada.e2568d477400ba031359.jpg",
-    "static/media/tarjetas-molonas.png": "./static/media/tarjetas-molonas.488717f38ae8c822e5fd.png",
+    "static/media/patataGameLogo.png": "./static/media/patataGameLogo.b841e173df983d362a0f.png",
     "index.html": "./index.html",
-    "main.53ff200b.css.map": "./static/css/main.53ff200b.css.map",
-    "main.cfe61e5c.js.map": "./static/js/main.cfe61e5c.js.map"
+    "main.90ffbd42.css.map": "./static/css/main.90ffbd42.css.map",
+    "main.37e7da8a.js.map": "./static/js/main.37e7da8a.js.map"
   },
   "entrypoints": [
-    "static/css/main.53ff200b.css",
-    "static/js/main.cfe61e5c.js"
+    "static/css/main.90ffbd42.css",
+    "static/js/main.37e7da8a.js"
   ]
 }
