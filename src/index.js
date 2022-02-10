@@ -82,10 +82,14 @@ server.post("/card", (req, res) => {
 
 // Ruta para mostrar tarjeta
 server.get("/card/:id", (req, res) => {
-  const cardId = req.params.id;
-  const query = db.prepare("SELECT * FROM cards WHERE id = ?");
-  const cardToRender = query.get(cardId);
-  res.render("card", cardToRender);
+  try {
+    const cardId = req.params.id;
+    const query = db.prepare("SELECT * FROM cards WHERE id = ?");
+    const cardToRender = query.get(cardId);
+    res.render("card", cardToRender);
+  } catch (error) {
+    res.json({ error });
+  }
 });
 
 // Servidor estatico
