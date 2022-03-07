@@ -1,21 +1,33 @@
+import { useState } from "react";
+
 import Design from "./Design";
 import Fill from "./Fill";
 import Share from "./Share";
 
 const Form = (props) => {
+  const [collapsables, setCollapsabes] = useState({
+    designCollapsable: false,
+    fillCollapsable: true,
+    shareCollapsable: true,
+  });
+
+  const handleCollapsables = (ev) => {
+    const fieldsetId = ev.currentTarget.id;
+    setCollapsabes({
+      ...collapsables,
+      [fieldsetId]: !collapsables[fieldsetId],
+    });
+  };
+
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
 
-  const handleCollapsables = (ev) => {
-    const fieldsetId = ev.target.id;
-    props.handleCollapsables(fieldsetId);
-  };
   return (
     <form onSubmit={handleSubmit} className="dashboard js-reset" id="form">
       <fieldset
         className={`fieldset   ${
-          props.collapsables.designCollapsable ? "collapse" : "rotateArrow"
+          collapsables.designCollapsable ? "collapse" : "rotateArrow"
         }`}
       >
         <legend
@@ -24,7 +36,7 @@ const Form = (props) => {
           className="legend js_legendDesign"
           title="Pulsa para desplegar"
         >
-          <div className="legend__iconTitle">
+          <div className={`legend__iconTitle`}>
             <div>
               <i className="far fa-object-ungroup item--icon"></i>
             </div>
@@ -33,14 +45,17 @@ const Form = (props) => {
           <div>
             <i className="fas fa-chevron-down"></i>
           </div>
-          {/*style="color: #54585a"*/}
         </legend>
-        <Design data={props.data} handleInput={props.handleInput} />
+        <Design
+          data={props.data}
+          handleInput={props.handleInput}
+          collapsed={collapsables.designCollapsable}
+        />
       </fieldset>
 
       <fieldset
         className={`fieldset ${
-          props.collapsables.fillCollapsable ? "collapse" : "rotateArrow"
+          collapsables.fillCollapsable ? "collapse" : "rotateArrow"
         }`}
       >
         <legend
@@ -59,14 +74,17 @@ const Form = (props) => {
             <i className="fas fa-chevron-down"></i>
           </div>
         </legend>
-        {/* style="color: #54585a" */}
 
-        <Fill data={props.data} handleInput={props.handleInput} />
+        <Fill
+          data={props.data}
+          handleInput={props.handleInput}
+          collapsed={collapsables.fillCollapsable}
+        />
       </fieldset>
 
       <fieldset
         className={`share fieldset ${
-          props.collapsables.shareCollapsable ? "collapse" : "rotateArrow"
+          collapsables.shareCollapsable ? "collapse" : "rotateArrow"
         }`}
       >
         <legend

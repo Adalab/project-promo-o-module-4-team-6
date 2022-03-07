@@ -22,7 +22,6 @@
 .fieldset {
   border-bottom: 1px solid #d8d8d8;
   margin: 0 20px 10px;
-  //lastchild: margin-bottom: 0
   @include tablet {
     width: 329px;
     margin-left: 40px;
@@ -34,6 +33,9 @@
   }
 }
 
+.collapsed {
+  display: none;
+}
 .collapse .js_collapsible {
   display: none;
 }

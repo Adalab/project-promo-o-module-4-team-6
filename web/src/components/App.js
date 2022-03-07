@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import Preview from "./preview/Preview";
 import Form from "./form/Form";
 import postToApi from "../services/postToApi";
-//Recordar styles que sacamos de html
 
 function App() {
   const [data, setData] = useState(
@@ -30,12 +29,6 @@ function App() {
     ls.set("data", data);
   }, [data]);
 
-  const [collapsables, setCollapsabes] = useState({
-    designCollapsable: false,
-    fillCollapsable: true,
-    shareCollapsable: true,
-  });
-
   const handleInput = (inputChanged, value) => {
     setData({ ...data, [inputChanged]: value });
   };
@@ -52,13 +45,6 @@ function App() {
       photo: "",
     });
   };
-  //no funciona, falta repasarlo, pregunar en tutoria
-  const handleCollapsables = (fieldsetId) => {
-    setCollapsabes({
-      ...collapsables,
-      [fieldsetId]: !collapsables[fieldsetId],
-    });
-  };
 
   return (
     <div>
@@ -67,8 +53,6 @@ function App() {
         <Preview data={data} handleClickReset={handleClickReset} />
         <Form
           data={data}
-          collapsables={collapsables}
-          handleCollapsables={handleCollapsables}
           handleInput={handleInput}
           postToApi={postToApi}
           cardUrl={cardUrl}
